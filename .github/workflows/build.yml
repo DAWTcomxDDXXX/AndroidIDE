@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'
+          distribution: 'termurin'
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
@@ -63,11 +63,6 @@ jobs:
         with:
           name: apk-arm64-v8a-debug
           path: app-arm64-v8a-arm64-v8a-debug.apk
-      - name: Upload armeabi-v7a-debug APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: apk-armeabi-v7a-debug
-          path: app-armeabi-v7a-armeabi-v7a-debug.apk
 
   build_release_apk:
     name: Build Release APK
@@ -115,11 +110,6 @@ jobs:
         with:
           name: apk-arm64-v8a-release
           path: app-arm64-v8a-arm64-v8a-release.apk
-      - name: Upload armeabi-v7a-release APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: apk-armeabi-v7a-release
-          path: app-armeabi-v7a-armeabi-v7a-release.apk
       - name: Upload mappings
         uses: actions/upload-artifact@v3
         with:
@@ -138,7 +128,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'
+          distribution: 'termurin'
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
@@ -240,10 +230,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: apk-arm64-v8a-release
-      - name: Download armeabi-v7a APK
-        uses: actions/download-artifact@v3
-        with:
-          name: apk-armeabi-v7a-release
       - name: Change Gradle wrapper permissions
         run: chmod +x ./gradlew
       - name: Restore cache
