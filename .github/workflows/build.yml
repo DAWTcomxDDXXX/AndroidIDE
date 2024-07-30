@@ -20,13 +20,13 @@ jobs:
     name: Build Debug APK
     runs-on: ubuntu-latest
     if: ${{ github.ref != 'refs/heads/main' }}
-    steps:
+    steps:v
       - name: Cancel previous runs
         uses: styfle/cancel-workflow-action@0.11.0
         with:
           access_token: ${{ github.token }}
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/che ckout@v4
         with:
           fetch-depth: 0
       - name: Set up JDK 17
